@@ -126,7 +126,8 @@ classdef tests
     %Plot comparison test: compares sin^2(x) to its T2, T3, T4, T5, T6, T7
     function plot_compare_test_2()
         figure('Name','Taylor polynomials approaching the function');
-        %>YOUR CODE HERE
+        f = @(x) sin(x).^2;
+        plot_compare(f,-pi,pi,7);
     end
     
     %This test introduces cell arrays (to store function handles) and
