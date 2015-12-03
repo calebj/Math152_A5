@@ -7,7 +7,7 @@ function [] = plot_compare(f, a, b, n)
 %OUPUT: the function displays a plot of f(x) and T_n(x) for x in [a, b]
 
 %>YOUR CODE HERE
-x = a:.01:b;
+x = [a:.01:b];
 hold on;
 plot(x,f(x));
 for i = 0:n
