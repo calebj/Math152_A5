@@ -21,7 +21,7 @@ for i = 0:n
     coef = 0;
     h = .001;
     for k = i:-1:0
-        coef = coef + choose(i,k)*f(0+(k)*h)*(-1)^(k);
+        coef = coef + choose(i,k)*f(0+(k)*h)*(-1)^(i-k);
     end
     coef = coef / h^(i);
     

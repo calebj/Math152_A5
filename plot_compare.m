@@ -11,6 +11,6 @@ x = a:.01:b;
 hold on;
 plot(x,f(x));
 for i = 0:n
-    plot(x,taylor_poly(f,i));
+    plot(x,vect_peval(taylor_poly(f,i),x));
 end
 end
