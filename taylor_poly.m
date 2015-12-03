@@ -1,0 +1,31 @@
+function [p] = taylor_poly(f, n)
+%TAYLOR_POLY computes the Taylor polynomial of degree n centered at 0
+%INPUT: f : function handle 
+%       n : natural number
+%OUTPUT: p: an array containing the coefficients of the polynomial T_n(x)
+%           (so T_n(x) = p(1) + p(2)x + p(3)x^2 + ... + p(n)x^(n-1) + p(n+1)x^n          
+
+%HINT: f'(x) can be computed as (f(x+h) - f(x))/h
+%      f''(x) is approx. (f'(x+h) - f'(x))/h
+%      ..and so on    
+%Compute f(0), f(h), f(2h), f(3h),... f(n*h)
+% To get f'(0), f'(h), ..., f'((n-1)h)
+% and then f''(0), ... , f''((n-1)h)
+%...and, eventually, f'''(n'th derivative)'''(0)
+
+choose = @(n,k) fact(n)/(fact(k)*fact(n-k));
+p = [];
+for i = 0:n
+    
+    %Calculates the value of the i-th derivative of f at x
+    coef = 0;
+    h = .001;
+    for k = i:-1:0
+        coef = coef + choose(i,k)*f(0+(k)*h)*(-1)^(k);
+    end
+    coef = coef / h^(i);
+    
+    %Appends the coefficient with Taylor Series stuff to array p
+    p = [p coef/fact(i)];
+end
+end
