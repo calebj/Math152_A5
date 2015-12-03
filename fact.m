@@ -3,5 +3,9 @@ function [nf] = fact(n)
 %INPUT: n : natural number
 %OUTPUT: n! = n(n-1)(n-2)...1
 
-nf = factorial(n);
+nf = 1;
+
+for i = [1:n]
+    nf = nf*i;
+end
 end
