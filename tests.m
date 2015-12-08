@@ -87,7 +87,7 @@ classdef tests
         f = @(x) sin(x);
         T5 = taylor_poly(f,5);
         disp('Testing taylor_poly(), test 2:');
-        disp('T5 of sin(x) should be [0 1 0 -3 0 5]');
+        disp('T5 of sin(x) should be [0 1 0 -1/6 0 1/120]');
         disp(T5);
         disp('');
     end
@@ -98,7 +98,7 @@ classdef tests
         f = @(x) log(1+x);
         T5 = taylor_poly(f,5);
         disp('Testing taylor_poly(), test 3:');
-        disp('T5 of log(1+x) should be ****SOMETHING***');
+        disp('T5 of log(1+x) should be [0 1 -1/2 2/6 -6/24 24/120]');
         disp(T5);
         disp('');
     end
@@ -109,7 +109,7 @@ classdef tests
         f = @(x) sqrt(x);
         T5 = taylor_poly(f,5);
         disp('Testing taylor_poly(), test 4:');
-        disp('T5 of sqrt(x) should be ****SOMETHING***');
+        disp('T5 of sqrt(x) should be ***SOMETHING***');
         disp(T5);
         disp('');
     end

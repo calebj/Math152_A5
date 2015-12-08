@@ -19,11 +19,11 @@ for i = 0:n
     
     %Calculates the value of the i-th derivative of f at x
     coef = 0;
-    h = .001;
+    h = .0001;
     for k = i:-1:0
         coef = coef + choose(i,k)*f(0+(k)*h)*(-1)^(i-k);
     end
-    coef = coef / h^i;
+    coef = coef / h^(i);
     
     %Appends the coefficient with Taylor Series stuff to array p
     p = [p coef/fact(i)];
